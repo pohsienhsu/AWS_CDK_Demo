@@ -1,0 +1,10 @@
+CDK commands:
+cdk init app --language typescript
+cdk bootstrap
+cdk synth
+cdk deploy
+
+cdk list (list all the stacks)
+cdk diff (compare the diff between local and cloud files)
+cdk doctor (health check)
+cdk destroy (delete stack)
