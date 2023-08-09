@@ -5,15 +5,19 @@ import { Bucket, CfnBucket } from "aws-cdk-lib/aws-s3";
 export class PhotosStack extends cdk.Stack {
 
   private stackSuffix: string;
+  public readonly photosBucketArn: string;
 
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
     this.initalizeSuffix();
 
-    const myBucket = new Bucket(this, "PhotosBucket", {
+    const photosBucket = new Bucket(this, "PhotosBucket", {
       bucketName: `photos-bucket-${this.stackSuffix}`,
     });
+
+    this.photosBucketArn = photosBucket.bucketArn;
+
   }
 
   private initalizeSuffix() {
